@@ -1,5 +1,6 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
+const res = require("express/lib/response")
 const app = express();
 const http = require("http");
 
@@ -19,6 +20,13 @@ app.get("/hello", function(req, res){
 });
 app.get("/gift", function(req, res){
     res.end(`<h1>siz sovgalar bolimidasiz</h1>`);
+});
+app.post("/create-item", (req,res) => {
+    console.log(req.body)
+    res.json({test: "succes"});
+});
+app.get("/", function(req, res){
+    res.render("harid");
 });
 
 const server = http.createServer(app);
