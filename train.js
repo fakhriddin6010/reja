@@ -1,2 +1,2 @@
-console.log("tarin ishga tushdi")
-console.log("tarin ishga tushmadi")
+console.log("train ishga tushdi")
+console.log("train ishga tushmadi")
