@@ -1,0 +1,1 @@
+console.log("tarin ishga tushdi")
