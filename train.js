@@ -3,6 +3,7 @@
 // MASALAN countLetter("e", "engineer") 3ni return qiladi.
 // @MITASK
 
+/*
 const task =(hisob,son) => {
     let count=0;
     for(i=0; i<=hisob.length; i++){
@@ -25,7 +26,8 @@ const list = [
     "siz kuchli bolgan narsalarni qiling", //40-50
     "yoshlarga investitsya qiling", //50-60
     "endi dam oling, foydasi yoq endi", //60
-];
+]; */
+
 /* Callback funksiyasi - bu boshqa funksiya ichida, 
 ma'lum bir operatsiya tugagandan so'ng chaqiriladigan funksiya. */
 
@@ -52,21 +54,21 @@ ma'lum bir operatsiya tugagandan so'ng chaqiriladigan funksiya. */
 // console.log("Passed here 1")
 
 // async functionlar -- 
-async function maslahatBering(a){
-    if(typeof a !== "number") throw new Error ("insert a number", null);
-    else if (a <= 20) return list[0];
-    else if (a > 20 && a <= 30) return list[1];
-    else if (a > 30 && a <= 40) return list[2];
-    else if (a > 40 && a <= 50) return list[3];
-    else if (a > 50 && a <= 60) return list[4];
-    else{
-        return new Promise((resolve,reject) => {
-            setInterval(() => {
-                resolve(list[5])
-            },500);
-        })
-    }
-}
+// async function maslahatBering(a){
+//     if(typeof a !== "number") throw new Error ("insert a number", null);
+//     else if (a <= 20) return list[0];
+//     else if (a > 20 && a <= 30) return list[1];
+//     else if (a > 30 && a <= 40) return list[2];
+//     else if (a > 40 && a <= 50) return list[3];
+//     else if (a > 50 && a <= 60) return list[4];
+//     else{
+//         return new Promise((resolve,reject) => {
+//             setInterval(() => {
+//                 resolve(list[5])
+//             },500);
+//         })
+//     }
+// }
 // then/catch--
 
 // maslahatBering(65)
@@ -79,13 +81,31 @@ async function maslahatBering(a){
 // console.log("Passed here 1")
 
 // async/await
-async function run() {
-    let Javob =await maslahatBering(68);
-    console.log(Javob);
-    Javob= await maslahatBering(31);
-    console.log(Javob);
-    Javob = await maslahatBering(41);
-    console.log(Javob)
-}
-run()
+// async function run() {
+//     let Javob =await maslahatBering(68);
+//     console.log(Javob);
+//     Javob= await maslahatBering(31);
+//     console.log(Javob);
+//     Javob = await maslahatBering(41);
+//     console.log(Javob)
+// }
+// run()
 
+/* B-TASK: 
+
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi. */
+
+const task = (hisob) => {
+    let count = 0;
+    for (let i = 0; i < hisob.length; i++) {
+        if (!isNaN(hisob[i]) && hisob[i] !== ' ') { 
+            count++;
+        }
+    }
+    return count;
+}
+
+const a = "ad2a54y79wet0sfgb9";
+const c = task(a);
+console.log('result:', c);
