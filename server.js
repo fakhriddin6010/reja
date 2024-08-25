@@ -2,8 +2,8 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://deni:f5GzlzdDaZWsX14f@cluster0.yf1o8.mongodb.net/Reja";
-// const connectionString = "mongodb+srv://deni:f5GzlzdDaZWsX14f@cluster0.yf1o8.mongodb.net/Reja?retryWrites=true&w=majority&appName=Cluster0";
+// const connectionString = "mongodb+srv://deni:f5GzlzdDaZWsX14f@cluster0.yf1o8.mongodb.net/Reja";
+const connectionString = "mongodb+srv://deni:f5GzlzdDaZWsX14f@cluster0.yf1o8.mongodb.net/Reja?retryWrites=true&w=majority&appName=Cluster0";
 
 
 mongodb.connect(connectionString, {
