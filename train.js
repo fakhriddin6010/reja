@@ -96,16 +96,34 @@ ma'lum bir operatsiya tugagandan so'ng chaqiriladigan funksiya. */
 Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi. */
 
-const task = (hisob) => {
-    let count = 0;
-    for (let i = 0; i < hisob.length; i++) {
-        if (!isNaN(hisob[i]) && hisob[i] !== ' ') { 
-            count++;
-        }
-    }
-    return count;
-}
+// const task = (hisob) => {
+//     let count = 0;
+//     for (let i = 0; i < hisob.length; i++) {
+//         if (!isNaN(hisob[i]) && hisob[i] !== ' ') { 
+//             count++;
+//         }
+//     }
+//     return count;
+// }
 
-const a = "ad2a54y79wet0sfgb9";
-const c = task(a);
-console.log('result:', c);
+// const a = "ad2a54y79wet0sfgb9";
+// const c = task(a);
+// console.log('result:', c);
+
+/* C-TASK: 
+
+Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true; */
+
+const tasckC =function (a,b){
+ if(a.length !== b.length){
+    return false;
+    }
+    const str1 =a.split("").sort().join("")
+    const str2 =b.split("").sort().join("")
+    return str1 === str2
+}
+const matn1='salom';
+const matn2='asmlo';
+const matn3= tasckC(matn1,matn2);
+console.log(matn3)
