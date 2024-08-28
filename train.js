@@ -3,6 +3,7 @@
 // MASALAN countLetter("e", "engineer") 3ni return qiladi.
 // @MITASK
 
+
 /*
 const task =(hisob,son) => {
     let count=0;
@@ -115,6 +116,7 @@ MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi. */
 Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true; */
 
+
 const tasckC =function (a,b){
  if(a.length !== b.length){
     return false;
@@ -127,3 +129,45 @@ const matn1='salom';
 const matn2='asmlo';
 const matn3= tasckC(matn1,matn2);
 console.log(matn3)
+
+/*D-TASK: 
+Shunday class tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!  */
+
+const moment = require('moment');
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
+    }
+
+    vaqt(){
+        return moment().format('HH:mm:ss');
+    }
+
+    shopQoldiq() {
+        console.log(`Hozir ${this.vaqt()} da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`);
+    }
+
+    shopSotish(mahsulot, soni) {
+        if (this[mahsulot] >= soni) {
+            this[mahsulot] -= soni;
+            console.log(`Hozir ${this.vaqt()} da ${soni}ta ${mahsulot} sotildi.`);
+        } else {
+            console.log(`Kechirasiz, yetarli miqdorda ${mahsulot} mavjud emas.`);
+        }
+    }
+
+    shopQabul(mahsulot, soni) {
+        this[mahsulot] += soni;
+        console.log(`Hozir ${this.vaqt()} da ${soni}ta ${mahsulot} qabul qilindi.`);
+    }
+}
+
+const myShop = new Shop(10, 10, 10);
+
+myShop.shopQoldiq(); 
+myShop.shopSotish('non', 9); 
+myShop.shopSotish('lagmon', 11); 
+myShop.shopQabul('cola', 4); 
