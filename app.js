@@ -43,6 +43,27 @@ app.post("/delete-item", (req,res) => {
         res.json({state: "success"});
     });
 });
+// edit-oper
+app.post("/edit-item", (req,res) => {
+    const data = req.body;
+    console.log(data)
+    db.collection("plans").findOneAndUpdate(
+        {_id: new mongodb.ObjectId(data.id)},
+        { $set: {reja: data.new_input}},
+        function(err, data){
+            res.json({state: "success"});
+        }
+    );
+});
+// hamma rejalar button
+
+app.post("/delete-all", (req,res) => {
+    if(req.body.delete_all){
+        db.collection("plans").deleteMany(function () {
+            res.json({state: "hamma rejalar o'chirldi"})
+        });
+    }
+});
 
 app.get("/", function(req, res) {
     console.log('user entered /');
