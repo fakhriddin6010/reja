@@ -171,3 +171,17 @@ myShop.shopQoldiq();
 myShop.shopSotish('non', 9); 
 myShop.shopSotish('lagmon', 11); 
 myShop.shopQabul('cola', 4); 
+
+/* E-TASK: 
+
+Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh"
+
+@MITASK */
+
+const as = (soz) =>{
+     const text='hello'
+     return text;
+}
+const b = as().split("").reverse().join("")
+console.log(b);
