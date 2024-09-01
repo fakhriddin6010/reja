@@ -185,3 +185,21 @@ const as = (soz) =>{
 }
 const b = as().split("").reverse().join("")
 console.log(b);
+
+/* F-TASK: 
+
+Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+MASALAN: getReverse("hello") return true return qiladi
+
+@MITASK */
+
+const findDoublers = (getReverse) => {
+    for( i =0; i<getReverse.length; i++){
+        if(getReverse.indexOf(getReverse[i]) !== getReverse.lastIndexOf(getReverse[i]) ){
+            return true
+        }
+    }
+    return false
+}
+const m = findDoublers('hello')
+console.log(m);
